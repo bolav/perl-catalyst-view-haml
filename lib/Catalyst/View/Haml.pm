@@ -40,6 +40,10 @@ Catalyst::View::Haml - Haml View Class
 sub new {
     my ( $class, $c, $arguments ) = @_;
 
+    my $self = $class->next::method(
+        $c, { },
+    );
+    
     $self->{haml} = Text::Haml->new;
 
     return $self;
@@ -67,6 +71,15 @@ sub process {
 
 __END__
 
+=head2 METHODS
+
+=head2 new
+
+The constructor for the Haml view. 
+
+=head2 process($c)
+
+Renders the Haml file.
 
 =head1 AUTHORS
 
