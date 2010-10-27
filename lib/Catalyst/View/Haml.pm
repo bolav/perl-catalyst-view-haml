@@ -119,6 +119,7 @@ sub render {
         }
     }
     $c->error("file error - ". $haml .": not found");
+    die "file error - ". $haml .": not found";
     return "file error - ". $haml .": not found";
 }
 
